@@ -1,0 +1,42 @@
+{
+  "execution_timestamp": "2025-01-19T16:12:39Z",
+  "retry_attempts": [
+    {
+      "name": "enable_marketplace",
+      "status": "FAILED",
+      "message": "Merge conflicts persist",
+      "conflict_files": "lib/routes/app_router.dart,lib/src/core/shared_widgets/custom_appbar.dart,lib/src/modules/configs/page_configs/homepage.dart",
+      "conflicting_authors": "Chasseur,Rissav25Pokhrel,Rojan904,Rozan,Saw2110,Surya,pras01,root,surya-trops,suryaghising,unknown",
+      "timestamp": "2025-01-19T16:12:41Z"
+    },
+    {
+      "name": "merging_registration_with_form_builder",
+      "status": "FAILED",
+      "message": "Merge conflicts persist",
+      "conflict_files": "lib/kaha_module/domain/entities/business/business.dart,lib/main/main.dart,lib/routes/app_router.dart,lib/routes/route_constants.dart",
+      "conflicting_authors": "Chasseur,Rissav25Pokhrel,Rojan904,Rozan,Saw2110,pras01,root,surya-trops,suryaghising,unknown",
+      "timestamp": "2025-01-19T16:12:42Z"
+    },
+    {
+      "name": "my_tabbed_products",
+      "status": "FAILED",
+      "message": "Merge conflicts persist",
+      "conflict_files": "lib/routes/app_router.dart,lib/src/core/shared_widgets/custom_appbar.dart,lib/src/modules/configs/page_configs/homepage.dart",
+      "conflicting_authors": "Chasseur,Rissav25Pokhrel,Rojan904,Rozan,Saw2110,Surya,pras01,root,surya-trops,suryaghising,unknown",
+      "timestamp": "2025-01-19T16:12:43Z"
+    },
+    {
+      "name": "tiers_update",
+      "status": "FAILED",
+      "message": "Merge conflicts persist",
+      "conflict_files": "lib/subscription_tiers_module/presentation/tiers/plans.dart",
+      "conflicting_authors": "Chasseur,pras01",
+      "timestamp": "2025-01-19T16:12:43Z"
+    }
+  ],
+  "summary": {
+    "total_retries": 4,
+    "successful_retries": 0,
+    "failed_retries": 4
+  }
+}
