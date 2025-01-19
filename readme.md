@@ -4,8 +4,9 @@
 
 This repository contains a step-wise merge pipeline that automates the process of validating, merging, retrying failed merges, and analyzing conflicts. 
 
-[**Read the Technical Overview**](https://github.com/chasseuragace/git_merger/readme_tech.md)  
-[**Read the Business Overview**](https://github.com/chasseuragace/git_merger/readme_business.md)
+[**Read the Technical Overview**](https://github.com/chasseuragace/git_merger/blob/main/readme_tech.md)  
+[**Read the Business Overview**](https://github.com/chasseuragace/git_merger/blob/main/readme_business.md)
+
 
 
 ## 📌 Overview
