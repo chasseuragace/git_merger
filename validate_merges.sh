@@ -1,9 +1,22 @@
 #!/bin/bash
 
+# Usage: ./validate_merges.sh <develop_branch> <target_branch> <weeks_threshold>
+
+# Read input arguments
+develop_branch="$1"
+target_branch="$2"
+weeks_threshold="$3"
+
+# Validate arguments
+if [ -z "$develop_branch" ] || [ -z "$target_branch" ] || [ -z "$weeks_threshold" ]; then
+    echo "Usage: $0 <develop_branch> <target_branch> <weeks_threshold>"
+    exit 1
+fi
+
+# Compute the date threshold (current date - weeks_threshold weeks)
+DATE_THRESHOLD=$(date -d "-$weeks_threshold weeks" +%Y-%m-%d)
+
 # Configuration
-DEVELOP_BRANCH="develop"
-TARGET_BRANCH="S9_development"
-DATE_THRESHOLD="2025-01-13"
 OUTPUT_DIR="output"
 LOG_FILE="$OUTPUT_DIR/operation_log.json"
 
@@ -65,7 +78,7 @@ update_summary() {
 git fetch --all
 
 # Create temporary branch for testing merges
-git checkout -b "$TARGET_BRANCH" "$DEVELOP_BRANCH"
+git checkout -b "$target_branch" "$develop_branch"
 
 # Get and process branches
 while IFS= read -r branch; do
@@ -87,13 +100,13 @@ while IFS= read -r branch; do
             fi
         fi
     fi
-done < <(git for-each-ref --format='%(refname:short)' refs/heads/ --no-merged "$DEVELOP_BRANCH")
+done < <(git for-each-ref --format='%(refname:short)' refs/heads/ --no-merged "$develop_branch")
 
 # Update summary with final counts
 update_summary "$total_branches" "$conflict_count" "$successful_merges"
 
 # Cleanup
-git checkout "$DEVELOP_BRANCH"
-git branch -D "$TARGET_BRANCH"
+git checkout "$develop_branch"
+git branch -D "$target_branch"
 
 echo "Merge validation completed. Check $LOG_FILE for detailed results."
