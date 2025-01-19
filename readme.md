@@ -4,6 +4,10 @@
 
 This repository contains a step-wise merge pipeline that automates the process of validating, merging, retrying failed merges, and analyzing conflicts. 
 
+[**Read the Technical Overview**](https://github.com/chasseuragace/git_merger/readme_tech.md)  
+[**Read the Business Overview**](https://github.com/chasseuragace/git_merger/readme_business.md)
+
+
 ## 📌 Overview
 
 The pipeline consists of several shell scripts and a Dart script that categorize and analyze branch conflicts based on **Clean Architecture with Riverpod**. It ensures smooth merging by following a structured order.
